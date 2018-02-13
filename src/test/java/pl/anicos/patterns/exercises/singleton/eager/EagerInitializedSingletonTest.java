@@ -1,4 +1,4 @@
-package pl.anicos.patterns.exercises.singleton.simple;
+package pl.anicos.patterns.exercises.singleton.eager;
 
 import org.junit.Test;
 
@@ -8,20 +8,20 @@ import java.util.stream.IntStream;
 
 import static org.junit.Assert.assertSame;
 
-public class ClassicSingletonTest {
+public class EagerInitializedSingletonTest {
 
     @Test
     public void shouldReturnAlwaysTheSameInstance() {
-        ClassicSingleton firstCall = ClassicSingleton.getInstance();
-        ClassicSingleton secondCall = ClassicSingleton.getInstance();
+        EagerInitializedSingleton firstCall = EagerInitializedSingleton.getInstance();
+        EagerInitializedSingleton secondCall = EagerInitializedSingleton.getInstance();
 
         assertSame(firstCall, secondCall);
     }
 
     @Test
     public void shouldReturnAlwaysTheSameInstanceInMultiThreadEnviroment() {
-        List<ClassicSingleton> result = IntStream.range(0, 3).parallel()
-                .mapToObj(i -> ClassicSingleton.getInstance())
+        List<EagerInitializedSingleton> result = IntStream.range(0, 3).parallel()
+                .mapToObj(i -> EagerInitializedSingleton.getInstance())
                 .collect(Collectors.toList());
 
 
