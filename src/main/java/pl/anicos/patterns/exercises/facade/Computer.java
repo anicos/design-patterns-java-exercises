@@ -1,19 +1,19 @@
 package pl.anicos.patterns.exercises.facade;
 
 public class Computer {
-    private CPU cpu;
-    private Memory memory;
-    private HardDrive hardDrive;
+    private final CPU cpu;
+    private final Memory memory;
+    private final HardDrive hardDrive;
 
-    public Computer() {
-        this.cpu = new CPU();
-        this.memory = new Memory();
-        this.hardDrive = new HardDrive();
+    public Computer(CPU cpu, Memory memory, HardDrive hardDrive) {
+        this.cpu = cpu;
+        this.memory = memory;
+        this.hardDrive = hardDrive;
     }
 
     public void run() {
-        cpu.processData();
-        memory.load();
         hardDrive.readData();
+        memory.load();
+        cpu.processData();
     }
 }

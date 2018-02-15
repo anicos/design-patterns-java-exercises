@@ -5,6 +5,7 @@ import org.junit.Test;
 import pl.anicos.patterns.exercises.abstractfactory.buttons.MacOSButton;
 import pl.anicos.patterns.exercises.abstractfactory.buttons.WindowsButton;
 import pl.anicos.patterns.exercises.abstractfactory.checkboxes.MacOSCheckbox;
+import pl.anicos.patterns.exercises.abstractfactory.checkboxes.WindowsCheckbox;
 import pl.anicos.patterns.exercises.abstractfactory.factories.MacOSFactory;
 import pl.anicos.patterns.exercises.abstractfactory.factories.WindowsFactory;
 
@@ -29,6 +30,6 @@ public class AbstractFactoryApplicationTest {
         String[] paint = testObj.paint();
         //then
         Assert.assertEquals(WindowsButton.YOU_HAVE_CREATED_WINDOWS_BUTTON, paint[0]);
-        Assert.assertEquals(WindowsButton.YOU_HAVE_CREATED_WINDOWS_BUTTON, paint[1]);
+        Assert.assertEquals(WindowsCheckbox.YOU_HAVE_CREATED_WINDOWS_CHECKBOX, paint[1]);
     }
 }
