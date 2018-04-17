@@ -27,4 +27,13 @@ public class ComputerTest {
         Mockito.verify(hardDrive).readData();
         Mockito.verify(memory).load();
     }
+
+    @Test
+    public void off() {
+        Computer testObj = new Computer(new CPU(),new Memory(), hardDrive);
+        testObj.off();
+
+       Mockito.verify(hardDrive).saveToDisk("Some data form RAM");
+
+    }
 }

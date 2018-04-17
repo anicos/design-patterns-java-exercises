@@ -16,4 +16,9 @@ public class Computer {
         memory.load();
         cpu.processData();
     }
+
+    public void off(){
+        String someData = memory.readData();
+        hardDrive.saveToDisk(someData);
+    }
 }
