@@ -12,8 +12,8 @@ public class GermanToUKPlugConnectorAdapter implements UKPlugConnector {
     }
 
     @Override
-    public void provideElectricity() {
-        plug.giveElectricity();
+    public void provideElectricity(String electricity) {
+        plug.provideGermanElectricity(electricity);
     }
 
 }

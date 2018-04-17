@@ -1,5 +1,5 @@
 package pl.anicos.patterns.exercises.adapter.uk;
 
 public interface UKPlugConnector {
-    void provideElectricity();
+    void provideElectricity(String electricity);
 }
